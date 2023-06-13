@@ -1,0 +1,59 @@
+.records{
+    /* Estilos para a tabela de registros */
+    width: 100%; /* Define a largura da tabela como 100% */
+    user-select: none; /* Impede a seleção de texto dentro da tabela */
+    text-align: left; /* Alinha o texto à esquerda dentro da tabela */
+}
+
+.records th{
+    /* Estilos para as células de cabeçalho da tabela */
+    height: 50px; /* Define a altura das células de cabeçalho */
+    background-color: var(--primary-color); /* Define a cor de fundo das células de cabeçalho */
+    padding-left: 20px; /* Define o espaçamento interno à esquerda das células de cabeçalho */
+    font-size: 1.2rem; /* Define o tamanho da fonte das células de cabeçalho */
+}
+
+.records td{
+    /* Estilos para as células de dados da tabela */
+    height: 50px; /* Define a altura das células de dados */
+    padding-left: 20px; /* Define o espaçamento interno à esquerda das células de dados */
+}
+
+.records th:last-child,
+.records td:last-child{
+    /* Estilos para a última célula de cada linha */
+    padding: 0; /* Remove o espaçamento interno da última célula */
+    min-width: 140px; /* Define a largura mínima da última célula */
+    text-align: center; /* Alinha o texto ao centro na última célula */
+}
+
+.records tr:hover{
+    /* Estilos para a linha da tabela quando hover */
+    background-color: var(--secundary-color); /* Define a cor de fundo da linha quando hover */
+}
+
+@media(max-width:480px){
+    /* Estilos para dispositivos móveis */
+    .records{
+        border-spacing: 5px; /* Define o espaçamento entre as células da tabela */
+    }
+    .records thead{
+        display:none; /* Esconde o cabeçalho da tabela */
+    }
+    .records tr{
+        box-shadow: 0 1px 3px var(--shadow-color); /* Adiciona uma sombra nas linhas da tabela */
+    }
+    .records td:not(:first-child){
+        display:flex; /* Aplica um layout flexível para as células, exceto a primeira */
+        justify-content: space-between; /* Alinha o conteúdo das células com espaço entre eles */
+        padding: 0 20px; /* Define o espaçamento interno das células */
+    }
+
+    .records td{
+        margin:10px 0; /* Define a margem das células */
+    }
+
+    .records tr:hover{
+        background-color: inherit; /* Herda a cor de fundo da linha quando hover */
+    }
+}

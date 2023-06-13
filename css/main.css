@@ -1,0 +1,78 @@
+*{
+    /* Define o box-sizing como border-box para todos os elementos */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* Definição das variáveis de cores personalizadas */
+    --primary-color: #FFBA00; /* Cor primária */
+    --secundary-color: #FFF1CC; /* Cor secundária */
+    --shadow-color: #CCC; /* Cor da sombra */
+    --text-color: #FFF; /* Cor do texto */
+}
+
+body{
+    /* Estilos gerais do corpo da página */
+    min-height: 100vh; /* Define a altura mínima do corpo como 100% da altura da viewport */
+    display: flex; /* Aplica um layout flexível ao corpo */
+    flex-direction: column; /* Define a direção da coluna para o layout flexível */
+    font-family: 'karla', sans-serif; /* Define a fonte do texto */
+    position:relative; /* Define a posição como relativa */
+}
+
+header{
+    /* Estilos do cabeçalho */
+    background-color: var(--primary-color); /* Define a cor de fundo do cabeçalho */
+    height: 70px; /* Define a altura do cabeçalho */
+    text-align: center; /* Alinha o texto ao centro no cabeçalho */
+    line-height: 70px; /* Define a altura da linha do texto no cabeçalho */
+    box-shadow: 0 1px 2px var(--shadow-color); /* Adiciona uma sombra no cabeçalho */
+}
+
+.header-title{
+    /* Estilos do título do cabeçalho */
+    color: black; /* Define a cor do texto do título do cabeçalho */
+    font-size: 2rem; /* Define o tamanho da fonte do título do cabeçalho */
+}
+
+main{
+    /* Estilos da seção principal */
+    flex-grow: 1; /* Permite que a seção principal cresça e preencha o espaço disponível */
+    display: flex; /* Aplica um layout flexível à seção principal */
+    flex-direction: column; /* Define a direção da coluna para o layout flexível */
+    align-items: flex-start; /* Alinha os itens à esquerda na seção principal */
+    width: 90%; /* Define a largura da seção principal */
+    margin: 5vh auto; /* Define as margens superior e inferior da seção principal */
+    padding: 50px; /* Define o espaçamento interno da seção principal */
+    box-shadow: 2px 2px 10px var(--shadow-color); /* Adiciona uma sombra à seção principal */
+    gap: 20px; /* Define o espaçamento entre os elementos filhos da seção principal */
+}
+
+footer{
+    /* Estilos do rodapé */
+    width:100; /* Define a largura do rodapé */
+    text-align: center; /* Alinha o texto ao centro no rodapé */
+    font-weight: 200; /* Define o peso da fonte no rodapé */
+    font-style: italic; /* Define o estilo da fonte no rodapé */
+    padding: 20px; /* Define o espaçamento interno do rodapé */
+}
+
+@media (max-width:480px){
+    /* Estilos para dispositivos com largura máxima de 480px */
+    header{
+        position:fixed; /* Fixa o cabeçalho na parte superior da viewport */
+        width:100%; /* Define a largura do cabeçalho como 100% da largura da viewport */
+    }
+    .header-title{
+        font-size: 1.5rem; /* Define um tamanho de fonte menor para o título do cabeçalho em dispositivos móveis */
+    }
+
+    main{
+        padding: 0; /* Remove o espaçamento interno da seção principal em dispositivos móveis */
+        margin: 20px 0 0 0; /* Define as margens da seção principal em dispositivos móveis */
+        width:100%; /* Define a largura da seção principal como 100% da largura da viewport em dispositivos móveis */
+        box-shadow: none; /* Remove a sombra da seção principal em dispositivos móveis */
+    }
+}

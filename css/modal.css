@@ -1,0 +1,109 @@
+.modal{
+    /* Estilos para o modal */
+    position: fixed; /* Define o posicionamento fixo do modal */
+    top:0; /* Define a posição vertical do modal como 0 */
+    left:0; /* Define a posição horizontal do modal como 0 */
+    width: 100%; /* Define a largura do modal como 100% */
+    height: 100%; /* Define a altura do modal como 100% */
+    background: #00000090; /* Define o fundo do modal como preto com 90% de opacidade */
+    opacity: 0; /* Define a opacidade inicial do modal como 0 */
+    z-index: -1; /* Define o índice z do modal como -1 */
+}
+
+.modal.active{
+    /* Estilos para o modal ativo */
+    opacity: 1; /* Define a opacidade do modal como 1 */
+    z-index: 1; /* Define o índice z do modal como 1 */
+}
+
+.modal-content{
+    /* Estilos para o conteúdo do modal */
+    display: flex; /* Aplica um layout flexível */
+    flex-direction: column; /* Define a direção da coluna para o layout flexível */
+    gap:20px; /* Define o espaçamento entre os elementos filhos */
+    width: 50vw; /* Define a largura do conteúdo do modal como 50% da viewport */
+    margin: 15vh auto; /* Define as margens superior e inferior do conteúdo do modal */
+    padding-bottom: 20px; /* Define o espaçamento inferior do conteúdo do modal */
+    background-color: white; /* Define a cor de fundo do conteúdo do modal como branco */
+    box-shadow: 1px 1px 10px black; /* Adiciona uma sombra ao conteúdo do modal */
+}
+
+.modal-header{
+    /* Estilos para o cabeçalho do modal */
+    display: flex; /* Aplica um layout flexível */
+    position: relative; /* Define o posicionamento relativo do cabeçalho do modal */
+    justify-content: center; /* Alinha o conteúdo centralmente no cabeçalho do modal */
+    height: 40px; /* Define a altura do cabeçalho do modal */
+    line-height: 40px; /* Define a altura da linha do texto do cabeçalho do modal */
+    font-size: 1rem; /* Define o tamanho da fonte do cabeçalho do modal */
+}
+
+.modal-close{
+    /* Estilos para o botão de fechar do modal */
+    position: absolute; /* Define o posicionamento absoluto do botão de fechar */
+    right: 0; /* Alinha o botão de fechar à direita */
+    display: block; /* Exibe o botão de fechar como um bloco */
+    width: 40px; /* Define a largura do botão de fechar */
+    height: 40px; /* Define a altura do botão de fechar */
+    text-align: center; /* Alinha o texto centralmente no botão de fechar */
+    user-select: none; /* Impede a seleção de texto no botão de fechar */
+    cursor: pointer; /* Define o cursor do mouse como ponteiro */
+}
+
+.modal-close:hover{
+    /* Estilos para o botão de fechar no hover */
+    background-color: #FF4949; /* Define a cor de fundo do botão de fechar no hover como vermelho */
+    color: white; /* Define a cor do texto do botão de fechar no hover como branco */
+}
+
+.modal-form{
+    /* Estilos para o formulário do modal */
+    display: flex; /* Aplica um layout flexível */
+    justify-content: space-between; /* Alinha os elementos do formulário com espaço entre eles */
+    flex-wrap: wrap; /* Permite que os elementos do formulário quebrem para a próxima linha */
+    gap: 20px; /* Define o espaçamento entre os elementos do formulário */
+    padding: 0 20px; /* Define o espaçamento interno do formulário */
+}
+
+.modal-field{
+    /* Estilos para os campos do formulário do modal */
+    width: calc(50% - 10px); /* Define a largura dos campos do formulário */
+    height: 40px; /* Define a altura dos campos do formulário */
+    outline-style: none; /* Remove a aparência do contorno ao focar nos campos */
+    border-style: none; /* Remove a borda dos campos do formulário */
+    box-shadow: 0 0 2px black; /* Adiciona uma sombra aos campos do formulário */
+    padding: 0 10px; /* Define o espaçamento interno dos campos do formulário */
+    font-size:1rem; /* Define o tamanho da fonte dos campos do formulário */
+}
+
+.modal-field:focus{
+    /* Estilos para os campos do formulário quando estão em foco */
+    border: 2px solid var(--primary-color); /* Adiciona uma borda ao campo do formulário quando está em foco */
+    box-shadow: 0 0 3px var(--primary-color); /* Adiciona uma sombra ao campo do formulário quando está em foco */
+}
+
+.modal-footer{
+    /* Estilos para o rodapé do modal */
+    background-color: inherit; /* Herda a cor de fundo do elemento pai */
+    text-align: right; /* Alinha o texto à direita no rodapé do modal */
+    padding: 0 20px; /* Define o espaçamento interno do rodapé do modal */
+}
+
+@media (max-width:480px){
+    /* Estilos para dispositivos móveis */
+    .modal{
+        top:100%; /* Esconde o modal fora da tela */
+        transition: all 1s ease; /* Adiciona uma transição suave para o modal */
+    }
+    .modal.active{
+        top:0; /* Exibe o modal na tela */
+    }
+    .modal-content{
+        margin:0; /* Remove as margens do conteúdo do modal */
+        width:100%; /* Define a largura do conteúdo do modal como 100% */
+        position:fixed; /* Define o posicionamento fixo do conteúdo do modal */
+    }
+    .modal-field{
+        width:100%; /* Define a largura dos campos do formulário como 100% */
+    }
+}
